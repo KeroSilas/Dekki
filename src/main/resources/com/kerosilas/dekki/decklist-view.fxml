@@ -144,11 +144,6 @@
                   </HBox>
                </children>
             </VBox>
-            <HBox maxHeight="1.0" minHeight="1.0" prefHeight="1.0" style="-fx-background-color: #303030;">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: #202020; -fx-background-radius: 6; -fx-border-radius: 6;" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
                <content>
                   <VBox fx:id="deckListVBox" spacing="8.0" style="-fx-background-color: #202020; -fx-background-radius: 6; -fx-border-radius: 6;" />
