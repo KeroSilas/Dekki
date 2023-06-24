@@ -1,0 +1,41 @@
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+#cbutton {
+    -fx-background-color: hsb(0, 0%, 19%);
+    -fx-background-radius: 6;
+    -fx-border-color: hsb(0, 0%, 25%);
+    -fx-border-radius: 6;
+}
+
+#cbutton2 {
+    -fx-background-color: hsb(161, 98%, 51%);
+    -fx-background-radius: 6;
+    -fx-border-color: hsb(161, 98%, 65%);
+    -fx-border-radius: 6;
+}
+
+#deck {
+    -fx-background-color: hsb(0, 0%, 19%);
+    -fx-background-radius: 6;
+    -fx-border-color: hsb(0, 0%, 25%);
+    -fx-border-radius: 6;
+}
+
+#deck:hover {
+    -fx-border-color: hsb(0, 0%, 45%);
+}
+
+#deck:focused {
+    -fx-background-color: hsb(0, 0%, 23%);
+    -fx-border-color: hsb(0, 0%, 45%);
+}
+
+#cbutton:hover {
+    -fx-border-color: hsb(0, 0%, 45%);
+}
+
+#cbutton2:hover {
+    -fx-border-color: hsb(161, 98%, 95%);
+}
