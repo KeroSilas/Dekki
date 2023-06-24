@@ -2,6 +2,42 @@
     -fx-background-color: transparent;
 }
 
+.menu .label {
+    -fx-text-fill: #ffffff;
+}
+
+.menu-item:focused {
+    -fx-background-color: #969A9F;
+}
+
+.menu {
+    -fx-text-fill: #ffffff;
+}
+
+.menu:hover {
+    -fx-background-color: #505050;
+}
+
+.menu:focused {
+    -fx-background-color: #505050;
+}
+
+#ctoggle {
+    -fx-background-color: hsb(0, 0%, 19%);
+    -fx-background-radius: 6;
+    -fx-border-color: hsb(0, 0%, 25%);
+    -fx-border-radius: 6;
+}
+
+#ctoggle:hover {
+    -fx-border-color: hsb(0, 0%, 48%);
+}
+
+#ctoggle:focused {
+    -fx-background-color: hsb(0, 0%, 25%);
+    -fx-border-color: hsb(0, 0%, 48%);
+}
+
 #cbutton {
     -fx-background-color: hsb(0, 0%, 19%);
     -fx-background-radius: 6;
@@ -9,33 +45,22 @@
     -fx-border-radius: 6;
 }
 
-#cbutton2 {
-    -fx-background-color: hsb(161, 98%, 51%);
-    -fx-background-radius: 6;
-    -fx-border-color: hsb(161, 98%, 65%);
-    -fx-border-radius: 6;
-}
-
-#deck {
-    -fx-background-color: hsb(0, 0%, 19%);
-    -fx-background-radius: 6;
-    -fx-border-color: hsb(0, 0%, 25%);
-    -fx-border-radius: 6;
-}
-
-#deck:hover {
-    -fx-border-color: hsb(0, 0%, 45%);
-}
-
-#deck:focused {
-    -fx-background-color: hsb(0, 0%, 23%);
-    -fx-border-color: hsb(0, 0%, 45%);
-}
-
 #cbutton:hover {
-    -fx-border-color: hsb(0, 0%, 45%);
+    -fx-border-color: hsb(0, 0%, 48%);
+}
+
+#cbutton2 {
+    -fx-background-color: hsb(161, 98%, 38%);
+    -fx-background-radius: 6;
+    -fx-border-color: hsb(161, 98%, 57%);
+    -fx-border-radius: 6;
 }
 
 #cbutton2:hover {
-    -fx-border-color: hsb(161, 98%, 98%);
+    -fx-border-color: hsb(161, 98%, 85%);
+}
+
+#cbutton2:focused {
+    -fx-background-color: hsb(161, 98%, 50%);
+    -fx-border-color: hsb(161, 98%, 85%);
 }

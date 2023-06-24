@@ -16,7 +16,7 @@ public class DekkiApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(DekkiApplication.class.getResource("decklist-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.getIcons().add(new Image("file:src/main/resources/com/kerosilas/dekki/icons/dekki.png"));
+        stage.getIcons().add(new Image("file:src/main/resources/com/kerosilas/dekki/icons/dekki2.png"));
         stage.setTitle("Dekki");
         stage.setMinWidth(1040);
         stage.setMinHeight(800);

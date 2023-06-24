@@ -17,39 +17,23 @@ import javafx.util.Duration;
 // This is the controller class for creating and handling the UI components
 public class DeckItem extends VBox {
 
-    private HBox hbox1;
-
-    private Label label1;
-
-    private HBox hbox2;
-
-    private GridPane gridPane;
-
-    private Label label2;
-
-    private Label label3;
-
-    private Label label4;
-
-    private Label label5;
-
     // Create a constructor that initializes the UI components
     public DeckItem(String name, int n, int d, int l, int t) {
 
         // Set the alignment and spacing of the deck VBox
         setAlignment(Pos.CENTER_LEFT);
         setSpacing(6.0);
-        setId("deck");
+        setId("ctoggle");
 
         // Create a new HBox for the first row
-        hbox1 = new HBox();
+        HBox hbox1 = new HBox();
 
         // Set the alignment and preferred height of the first HBox
         hbox1.setAlignment(Pos.CENTER_LEFT);
-        hbox1.setPrefHeight(24.0);
+        hbox1.setPrefHeight(20.0);
 
         // Create a new label for the first row
-        label1 = new Label();
+        Label label1 = new Label();
 
         // Set the text and text fill of the first label
         label1.setText(name);
@@ -66,19 +50,14 @@ public class DeckItem extends VBox {
         VBox.setMargin(hbox1, new Insets(0, 0, 0, 0));
 
         // Create a new HBox for the second row
-        hbox2 = new HBox();
+        HBox hbox2 = new HBox();
 
-        // Set the alignment and max/min/preferred height of the second HBox
-        hbox2.setAlignment(Pos.CENTER_LEFT);
-        hbox2.setMaxHeight(1.0);
-        hbox2.setMinHeight(1.0);
-        hbox2.setPrefHeight(1.0);
-
-        // Set the style of the second HBox
-        hbox2.setStyle("-fx-background-color: #404040;");
+        hbox2.setStyle("-fx-background-color: hsb(0, 0%, 25%);");
+        hbox2.setMinHeight(1);
+        hbox2.setPrefHeight(1);
 
         // Create a new grid pane for the third row
-        gridPane = new GridPane();
+        GridPane gridPane = new GridPane();
 
         // Set the alignment of the grid pane
         gridPane.setAlignment(Pos.CENTER);
@@ -109,7 +88,7 @@ public class DeckItem extends VBox {
 
         // Create a row constraint for the grid pane
         RowConstraints row1 = new RowConstraints();
-        row1.setPrefHeight(24.0);
+        row1.setPrefHeight(20.0);
         row1.setValignment(VPos.CENTER);
         row1.setVgrow(Priority.ALWAYS);
 
@@ -117,10 +96,10 @@ public class DeckItem extends VBox {
         gridPane.getRowConstraints().add(row1);
 
         // Create four labels for the grid pane
-        label2 = new Label();
-        label3 = new Label();
-        label4 = new Label();
-        label5 = new Label();
+        Label label2 = new Label();
+        Label label3 = new Label();
+        Label label4 = new Label();
+        Label label5 = new Label();
 
         // Set the text and text fill of the second label
         label2.setText(String.valueOf(n));
@@ -162,7 +141,7 @@ public class DeckItem extends VBox {
         label4.setText(String.valueOf(l));
         label4.setTextFill(Color.web("#ff9700"));
 
-        Tooltip tooltip3 = new Tooltip("Learning cards");
+        Tooltip tooltip3 = new Tooltip("Active cards");
         tooltip3.setShowDelay(Duration.millis(300));
         label4.setTooltip(tooltip3);
 
@@ -203,8 +182,8 @@ public class DeckItem extends VBox {
         // Set the cursor of the deck VBox
         setCursor(Cursor.HAND);
 
-        Animation animation1 = new ColorAnimation(Color.hsb(0, 0, 0.26), 0.07, this, Duration.millis(140L));
-        Animation animation2 = new ColorAnimation(Color.hsb(0, 0, 0.26), 0.03, this, Duration.millis(140L));
+        Animation animation1 = new ColorAnimation(Color.hsb(0, 0, 0.30), 0.11, this, Duration.millis(140L));
+        Animation animation2 = new ColorAnimation(Color.hsb(0, 0, 0.30), 0.05, this, Duration.millis(140L));
 
         setOnMousePressed(e -> {
             Platform.runLater(() -> {
@@ -215,6 +194,14 @@ public class DeckItem extends VBox {
                     animation1.playFromStart();
                 }
             });
+        });
+
+        focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue) {
+                hbox2.setStyle("-fx-background-color: hsb(0, 0%, 31%);");
+            } else {
+                hbox2.setStyle("-fx-background-color: hsb(0, 0%, 25%);");
+            }
         });
 
         // Add the HBoxes and grid pane to the deck VBox

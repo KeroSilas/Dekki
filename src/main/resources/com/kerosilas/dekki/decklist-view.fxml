@@ -4,6 +4,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -12,7 +14,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="1000.0" style="-fx-background-color: #202020;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kerosilas.dekki.DeckListController">
    <center>
-      <BorderPane style="-fx-border-color: #303030; -fx-border-radius: 6 0 0 0; -fx-background-color: #121212; -fx-background-radius: 6 0 0 0;" BorderPane.alignment="CENTER">
+      <BorderPane style="-fx-border-color: #303030; -fx-border-radius: 9 0 0 0; -fx-background-color: #121212; -fx-background-radius: 9 0 0 0;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="-1.0" right="-1.0" />
          </BorderPane.margin>
@@ -70,9 +72,9 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </BorderPane.margin>
                <children>
-                  <HBox fx:id="answerHBox" alignment="CENTER" prefHeight="40.0" spacing="8.0" style="-fx-background-color: #121212;">
+                  <HBox fx:id="answerHBox" alignment="CENTER" prefHeight="36.0" spacing="8.0" style="-fx-background-color: #121212;">
                      <children>
-                        <VBox id="cbutton" fx:id="showAnswer" alignment="CENTER" prefWidth="115.0">
+                        <VBox id="cbutton" fx:id="showAnswer" alignment="CENTER" prefWidth="110.0">
                            <children>
                               <Label text="Show answer" textFill="#dddddd">
                                  <font>
@@ -86,10 +88,10 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox fx:id="ratingHBox" alignment="CENTER" prefHeight="40.0" spacing="8.0" style="-fx-background-color: #121212;">
+                  <HBox fx:id="ratingHBox" alignment="CENTER" prefHeight="36.0" spacing="8.0" style="-fx-background-color: #121212;">
                      <children>
                         <Label alignment="CENTER_RIGHT" prefWidth="100.0" text="&lt;10m" textAlignment="RIGHT" textFill="#808080" />
-                        <VBox id="cbutton" fx:id="again" alignment="CENTER" prefWidth="115.0">
+                        <VBox id="cbutton" fx:id="again" alignment="CENTER" prefWidth="110.0">
                            <children>
                               <Label text="Again" textFill="#dddddd">
                                  <font>
@@ -101,7 +103,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </VBox>
-                        <VBox id="cbutton" fx:id="good" alignment="CENTER" prefWidth="115.0">
+                        <VBox id="cbutton" fx:id="good" alignment="CENTER" prefWidth="110.0">
                            <children>
                               <Label text="Good" textFill="#dddddd">
                                  <font>
@@ -122,15 +124,15 @@
       </BorderPane>
    </center>
    <left>
-      <VBox prefWidth="250.0" spacing="8.0" BorderPane.alignment="CENTER">
+      <VBox prefWidth="230.0" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
             <VBox spacing="8.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" minHeight="40.0" prefHeight="40.0" spacing="8.0">
+                  <HBox alignment="CENTER_LEFT" minHeight="36.0" prefHeight="36.0" spacing="8.0">
                      <children>
                         <VBox id="cbutton2" fx:id="createDeck" alignment="CENTER" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label text="Create a new deck" textFill="WHITE">
+                              <Label text="Create a deck" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -140,6 +142,18 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </VBox>
+                        <VBox id="ctoggle" fx:id="home" alignment="CENTER" minWidth="36.0" prefWidth="36.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <children>
+                              <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@icons/home2.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
                </children>
@@ -148,6 +162,9 @@
                <content>
                   <VBox fx:id="deckListVBox" spacing="8.0" style="-fx-background-color: #202020; -fx-background-radius: 6; -fx-border-radius: 6;" />
                </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </ScrollPane>
          </children>
          <padding>
